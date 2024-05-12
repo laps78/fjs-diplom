@@ -1,5 +1,23 @@
 .global__header {
+  margin-top: 1rem;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
+}
+
+.header_left_column {
+  width: 30%;
+  margin: 1rem, 1rem, 1rem, 1rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: #079aa2;
+  color: #ffffff;
+}
+
+.header_right_column {
+  width: 60%;
+  margin: 1rem, 1rem, 1rem, 1rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: #ffffff;
 }

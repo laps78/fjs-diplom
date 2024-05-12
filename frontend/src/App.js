@@ -1,13 +1,13 @@
 import "./App.css";
 import Header from "./components/Header/Header";
+import AppContext from "./contexts/AppContext";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <AppContext.Provider value={{ AppContext }}>
         <Header />
-      </header>
-      <Header />
+      </AppContext.Provider>
     </div>
   );
 }
