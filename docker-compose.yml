@@ -1,7 +1,7 @@
 version: "3"
 services:
   app:
-    image: node:alpine
+    image: node:22-alpine
     restart: always
     volumes:
       - ./server:/app
@@ -14,7 +14,7 @@ services:
     command: npm run start:dev
 
   frontend:
-    image: node:alpine
+    image: node:22-alpine
     restart: always
     volumes:
       - ./frontend:/app
