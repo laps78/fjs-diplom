@@ -1,0 +1,15 @@
+.Main {
+  margin: 1rem;
+  padding: 2rem;
+  width: 60%;
+  border-radius: 0.5rem;
+  background-color: #ffffff;
+  min-height: 500px;
+}
+
+.main_content_wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}

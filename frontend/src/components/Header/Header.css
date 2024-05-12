@@ -3,21 +3,32 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
+  width: 100%;
 }
 
 .header_left_column {
   width: 30%;
-  margin: 1rem, 1rem, 1rem, 1rem;
+  margin: 1rem;
   padding: 1rem;
   border-radius: 0.5rem;
   background-color: #079aa2;
   color: #ffffff;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .header_right_column {
   width: 60%;
-  margin: 1rem, 1rem, 1rem, 1rem;
+  height: 50px;
+  margin: 1rem;
   padding: 1rem;
   border-radius: 0.5rem;
   background-color: #ffffff;
+
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
 }

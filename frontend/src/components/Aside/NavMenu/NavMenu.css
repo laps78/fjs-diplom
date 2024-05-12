@@ -1,0 +1,14 @@
+.NavMenu {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  line-height: 150%;
+  max-height: 70px;
+}
+
+.NavMenu__item {
+  color: darkgrey;
+  text-decoration: none;
+}
