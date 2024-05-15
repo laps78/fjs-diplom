@@ -1,7 +1,7 @@
 version: "3"
 services:
   app:
-    image: node:22-alpine
+    image: node:20-alpine
     restart: always
     volumes:
       - ./server:/app
@@ -11,13 +11,11 @@ services:
     environment:
       PORT: 3002
       REDIS_URL: redis://storage
-    command: sh -c "if ! [-d ./node_modules ];then\
-      npm install\
-      fi;\
+    command: sh -c "if ! [ -d ./node_modules ];then npm install;fi;\
       npm run start:dev"
 
   frontend:
-    image: node:22-alpine
+    image: node:20-alpine
     restart: always
     volumes:
       - ./frontend:/app
@@ -28,9 +26,7 @@ services:
       PORT: 50012
       APP_URL: http://localhost
       APP_PORT: 3002
-    command: sh -c "if ! [-d ./node_modules ];then\
-      npm install\
-      fi;\
+    command: sh -c "if ! [ -d ./node_modules ];then npm install;fi;\
       npm run start"
     depends_on:
       - app
