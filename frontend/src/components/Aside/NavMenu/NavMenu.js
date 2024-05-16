@@ -1,4 +1,6 @@
 import "./NavMenu.css";
+import { v4 as uuid } from "uuid";
+import { Link } from "react-router-dom";
 
 const NavMenu = (props) => {
   const menuItems = [
@@ -17,13 +19,14 @@ const NavMenu = (props) => {
   ];
   return (
     <ul className="NavMenu">
-      {menuItems.map((item) => (
-        <li>
-          <a href={item.target} className="NavMenu__item">
-            {"> " + item.text}
-          </a>
-        </li>
-      ))}
+      {menuItems.map((item) => {
+        const key = uuid();
+        return (
+          <li key={key} className="NavMenu__item">
+            <Link to={item.target}>{"> " + item.text}</Link>
+          </li>
+        );
+      })}
     </ul>
   );
 };

@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import MainPage from "./routes/page-hotel-results";
 
 const router = createBrowserRouter([
@@ -16,6 +16,4 @@ const router = createBrowserRouter([
   },
 ]);
 
-const Router = <RouterProvider router={router} />;
-
-export default Router;
+export default router;
