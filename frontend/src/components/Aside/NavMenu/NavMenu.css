@@ -10,5 +10,6 @@
 
 .NavMenu__item {
   color: darkgrey;
+  font-weight: 700;
   text-decoration: none;
 }

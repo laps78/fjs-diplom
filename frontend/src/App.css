@@ -25,3 +25,7 @@ a {
   align-items: flex-start;
   margin-top: 1rem;
 }
+
+.shadowed_box {
+  box-shadow: 10px 15px 15px rgba(0, 0, 0, 0.023);
+}

@@ -1,13 +1,18 @@
 .global__header {
-  margin-top: 1rem;
+  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  width: 100%;
+  justify-content: center;
+  margin-top: 1rem;
+
+  min-width: 800px;
+  max-width: 1400px;
+  text-align: center;
 }
 
 .header_left_column {
-  width: 30%;
+  9width: 25%;
+  width: 300px;
   margin: 1rem;
   padding: 1rem;
   border-radius: 0.5rem;
@@ -21,7 +26,7 @@
 }
 
 .header_right_column {
-  width: 60%;
+  width: 75%;
   height: 50px;
   margin: 1rem;
   padding: 1rem;

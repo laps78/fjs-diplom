@@ -3,10 +3,8 @@ import NavMenu from "./NavMenu/NavMenu";
 
 const Aside = (props) => {
   return (
-    <aside className="Aside">
-      <div className="aside_content_wrapper">
-        <NavMenu />
-      </div>
+    <aside className="shadowed_box Aside">
+      <NavMenu />
     </aside>
   );
 };
