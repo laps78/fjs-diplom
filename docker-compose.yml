@@ -12,6 +12,8 @@ services:
       PORT: 3002
       REDIS_URL: redis://storage
     command: sh -c "if ! [ -d ./node_modules ];then npm install;fi;npm run start:dev"
+    depends_on:
+      - mongo
 
   frontend:
     image: node:22-alpine
@@ -28,3 +30,17 @@ services:
     command: sh -c "if ! [ -d ./node_modules ];then npm install;fi;npm run start"
     depends_on:
       - app
+
+  mongo:
+    image: mongo
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./data:/data/db
+
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - "8085:8085"
