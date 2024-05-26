@@ -1,0 +1,15 @@
+# compiled output
+node_modules
+
+# OS & IDE
+.DS_Store
+.idea
+.vscode
+
+# custom
+dist
+data/*
+.git
+.env
+.vscode
+uploads
