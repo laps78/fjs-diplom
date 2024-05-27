@@ -9,9 +9,10 @@ services:
     ports:
       - 3002:3002
     environment:
-      PORT: 3002
-      REDIS_URL: redis://storage
-    command: sh -c "if ! [ -d ./node_modules ];then npm install;fi;npm run start:dev"
+      MONGO_URL_DOCKER: mongodb://root:example@mongo:27017
+      HTTP_PORT: 3002
+
+    command: sh -c "npm run start:dev"
     depends_on:
       - mongo
 
@@ -27,20 +28,29 @@ services:
       PORT: 50012
       APP_URL: http://localhost
       APP_PORT: 3002
-    command: sh -c "if ! [ -d ./node_modules ];then npm install;fi;npm run start"
+    command: sh -c "npm run start"
     depends_on:
       - app
 
   mongo:
     image: mongo
     restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
     ports:
-      - "27017:27017"
+      - 27017:27017
     volumes:
-      - ./data:/data/db
+      - ./db_data/mongo:/data/db
 
   mongo-express:
     image: mongo-express
     restart: always
     ports:
-      - "8085:8085"
+      - 8081:8081
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: example
+      ME_CONFIG_MONGODB_URL: mongodb://root:example@mongo:27017
+    depends_on:
+      - mongo

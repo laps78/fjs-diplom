@@ -1,5 +1,5 @@
 import { HttpStatus, Injectable, UnauthorizedException } from "@nestjs/common";
-import * as bcrypt from "bcrypt";
+import * as bcrypt from "bcryptjs";
 import { Request, Response } from "express";
 import { UserService } from "src/user/user.service";
 
