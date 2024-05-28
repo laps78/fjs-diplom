@@ -12,7 +12,7 @@ services:
       MONGO_URL_DOCKER: mongodb://root:example@mongo:27017
       HTTP_PORT: 3002
 
-    command: sh -c "npm run start:dev"
+    command: sh -c "npm install && npm run start:dev"
     depends_on:
       - mongo
 
@@ -28,7 +28,7 @@ services:
       PORT: 50012
       APP_URL: http://localhost
       APP_PORT: 3002
-    command: sh -c "npm run start"
+    command: sh -c "npm install && npm run start"
     depends_on:
       - app
 

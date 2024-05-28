@@ -8,7 +8,7 @@ node_modules
 
 # custom
 dist
-data/*
+data/
 db_data/
 .git
 .env
