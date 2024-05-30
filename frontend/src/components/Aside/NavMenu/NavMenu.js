@@ -16,6 +16,10 @@ const NavMenu = (props) => {
       text: "Добавить отель",
       target: "/gui/hotels/add",
     },
+    {
+      text: "Пользователи",
+      target: "/gui/hotels/add",
+    },
   ];
   return (
     <ul className="NavMenu">
