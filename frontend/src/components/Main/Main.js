@@ -20,7 +20,7 @@ const Main = (props) => {
         просматривать данный контент. Однако, безвыходных ситуаций не бывает!
       </p>
       <p>
-        Предлагаем {linkToDropdownLoginForm} или {linkToDropdownRegisterForm}
+        Вы можете {linkToDropdownLoginForm} или {linkToDropdownRegisterForm}
         <LoginForm />
         <RegisterForm />
       </p>
