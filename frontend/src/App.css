@@ -22,7 +22,6 @@ a {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  margin-top: 1rem;
 }
 
 .shadowed_box {

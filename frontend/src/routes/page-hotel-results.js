@@ -4,7 +4,7 @@ import Main from "../components/Main/Main";
 
 export default function MainPage(props) {
   return (
-    <div className="App">
+    <div className="App container-fluid">
       <Header />
       <div className="app__body">
         <Aside />

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const NavMenu = (props) => {
   const menuItems = [
     {
-      text: "Все гостиницы",
+      text: "Все отели",
       target: "/gui/hotels/all",
     },
     {
@@ -13,7 +13,7 @@ const NavMenu = (props) => {
       target: "/gui/hotels/search",
     },
     {
-      text: "Добавить гостиницу",
+      text: "Добавить отель",
       target: "/gui/hotels/add",
     },
   ];
