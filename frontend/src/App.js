@@ -1,5 +1,5 @@
 import "./App.css";
-import { BuildPage } from "./components/helpers/BuildPage";
+import { BuildPage } from "./helpers/BuildPage";
 
 function App() {
   const Page = BuildPage();

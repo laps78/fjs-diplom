@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import { BuildPage } from "./components/helpers/BuildPage";
+import { BuildPage } from "./helpers/BuildPage";
 
 const AppBrowserRouter = createBrowserRouter([
   {

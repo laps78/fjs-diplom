@@ -1,7 +1,7 @@
-import "../../App.css";
-import Main from "../Main/Main";
-import Aside from "../Aside/Aside";
-import Header from "../Header/Header";
+import "../App.css";
+import Main from "../components/Main/Main";
+import Aside from "../components/Aside/Aside";
+import Header from "../components/Header/Header";
 
 export const BuildPage = (props) => {
   const { pageName } = props;

@@ -1,6 +1,6 @@
 import "./LoginForm.css";
 import { useRef } from "react";
-import BackendRequestHandler from "../../../helpers/BakcendRequestHandler";
+import BackendRequestHandler from "../../../../helpers/BakcendRequestHandler";
 
 export const linkToDropdownLoginForm = (
   <button
