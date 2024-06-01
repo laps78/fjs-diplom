@@ -18,7 +18,7 @@ export const RegisterForm = () => {
     <div className="dropdown">
       <form className="dropdown-menu p-4">
         <div className="mb-3">
-          <label for="exampleDropdownFormEmail2" className="form-label">
+          <label htmlFor="exampleDropdownFormEmail2" className="form-label">
             Email address
           </label>
           <input
@@ -29,7 +29,7 @@ export const RegisterForm = () => {
           />
         </div>
         <div className="mb-3">
-          <label for="exampleDropdownFormPassword2" className="form-label">
+          <label htmlFor="exampleDropdownFormPassword2" className="form-label">
             Password
           </label>
           <input
@@ -46,7 +46,7 @@ export const RegisterForm = () => {
               className="form-check-input"
               id="dropdownCheck2"
             />
-            <label className="form-check-label" for="dropdownCheck2">
+            <label htmlFor="dropdownCheck2" className="form-check-label">
               Remember me
             </label>
           </div>

@@ -1,7 +1,9 @@
 import { createContext } from "react";
 
 const AppContext = createContext({
-  user: null,
+  user: {
+    role: "UserRole",
+  },
 });
 
 export default AppContext;

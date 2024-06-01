@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import MainPage from "./routes/page-hotel-results";
 
-const router = createBrowserRouter([
+const AppBrowserRouter = createBrowserRouter([
   {
     path: "/",
     element: <MainPage />,
@@ -16,4 +16,4 @@ const router = createBrowserRouter([
   },
 ]);
 
-export default router;
+export default AppBrowserRouter;

@@ -4,14 +4,14 @@ import "./index.css";
 import App from "./App";
 import AppContext from "./contexts/AppContext";
 import reportWebVitals from "./reportWebVitals";
-import router from "./Router";
+import AppBrowserRouter from "./Router";
 import { RouterProvider } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <AppContext.Provider value={{ AppContext }}>
-      <RouterProvider router={router}>
+      <RouterProvider router={AppBrowserRouter}>
         <App />
       </RouterProvider>
     </AppContext.Provider>

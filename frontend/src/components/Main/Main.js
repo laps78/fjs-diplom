@@ -19,11 +19,11 @@ const Main = (props) => {
         К сожалению, незарегистрированным пользователям не разрешено
         просматривать данный контент. Однако, безвыходных ситуаций не бывает!
       </p>
-      <p>
+      <div>
         Вы можете {linkToDropdownLoginForm} или {linkToDropdownRegisterForm}
         <LoginForm />
         <RegisterForm />
-      </p>
+      </div>
     </div>
   );
 
@@ -31,7 +31,11 @@ const Main = (props) => {
   return (
     <main className="shadowed_box Main col-6">
       <div className="main_content_wrapper text-center">
-        {user ? <>{authorizedContent}</> : <>{unAuthorizedContent}</>}
+        {user ? (
+          <div>{authorizedContent}</div>
+        ) : (
+          <div>{unAuthorizedContent}</div>
+        )}
       </div>
     </main>
   );
