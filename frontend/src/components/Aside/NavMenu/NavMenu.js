@@ -3,7 +3,7 @@ import { v4 as uuid } from "uuid";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import AppContext from "../../../contexts/AppContext";
-import AccessController from "../../misc/helpers/AccessController";
+import AccessController from "../../helpers/AccessController";
 
 const NavMenu = (props) => {
   const menuItems = [

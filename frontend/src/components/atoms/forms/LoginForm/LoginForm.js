@@ -14,29 +14,28 @@ export const linkToDropdownLoginForm = (
 );
 
 export const LoginForm = () => {
+  const submitHandler = (event) => {
+    event.preventDefault();
+    console.log("login form submitted");
+  };
+
   return (
     <div className="dropdown">
       <form className="dropdown-menu p-4">
         <div className="mb-3">
-          <label htmlFor="exampleDropdownFormEmail2" className="form-label">
-            Email address
-          </label>
           <input
             type="email"
             className="form-control"
             id="exampleDropdownFormEmail2"
-            placeholder="email@example.com"
+            placeholder="Введите логин"
           />
         </div>
         <div className="mb-3">
-          <label htmlFor="exampleDropdownFormPassword2" className="form-label">
-            Password
-          </label>
           <input
             type="password"
             className="form-control"
             id="exampleDropdownFormPassword2"
-            placeholder="Password"
+            placeholder="Введите пароль"
           />
         </div>
         <div className="mb-3">
@@ -47,12 +46,16 @@ export const LoginForm = () => {
               id="dropdownCheck2"
             />
             <label htmlFor="dropdownCheck2" className="form-check-label">
-              Remember me
+              Запомнить меня
             </label>
           </div>
         </div>
-        <button type="submit" className="btn btn-primary">
-          Sign in
+        <button
+          onClick={submitHandler}
+          type="submit"
+          className="btn btn-primary"
+        >
+          Войти
         </button>
       </form>
     </div>
