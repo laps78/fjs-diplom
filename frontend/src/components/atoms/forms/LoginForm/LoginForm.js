@@ -1,5 +1,6 @@
 import "./LoginForm.css";
 import { useRef } from "react";
+import BackendRequestHandler from "../../../helpers/BakcendRequestHandler";
 
 export const linkToDropdownLoginForm = (
   <button
@@ -14,9 +15,16 @@ export const linkToDropdownLoginForm = (
 );
 
 export const LoginForm = () => {
-  const submitHandler = (event) => {
+  const loginCurrentValue = useRef(null);
+  const passwordCurrentValue = useRef(null);
+  const submitHandler = async (event) => {
     event.preventDefault();
     console.log("login form submitted");
+    const preparedRequestData = {
+      email: loginCurrentValue,
+      password: passwordCurrentValue,
+    };
+    await BackendRequestHandler(preparedRequestData);
   };
 
   return (

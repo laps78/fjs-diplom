@@ -52,7 +52,7 @@ const NavMenu = (props) => {
                 <AccessController
                   element={
                     <li className="NavMenu__item">
-                      <Link to={item.target}>{"> " + item.text}</Link>
+                      <Link to={item.target}>{">" + item.text}</Link>
                     </li>
                   }
                   allowedRoles={item.allowedRoles}

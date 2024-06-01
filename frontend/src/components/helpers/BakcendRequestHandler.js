@@ -6,6 +6,7 @@ export const BackendRequestHandler = async (method, data) => {
   const REQUEST_URL_STRING = `${APP_URL}/${APP_PORT}`;
   try {
     const result = await fetch(REQUEST_URL_STRING, method, data);
+    return result;
   } catch (error) {
     console.error("Во процессе отправки запроса возникла ошибка!", error);
   }
