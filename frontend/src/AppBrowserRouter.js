@@ -1,47 +1,86 @@
 import { createBrowserRouter } from "react-router-dom";
-import { BuildPage } from "./helpers/BuildPage";
+import Pages from "./helpers/PageBuilder/Pages";
 
-const AppBrowserRouter = createBrowserRouter([
+export const AppBrowserRoutesArray = [
   {
+    name: Pages.name,
     path: "/",
-    element: BuildPage("Главная страница"),
+    element: Pages.MainPage,
+    loader: null,
+    allowedRoles: ["GuestRole"],
   },
   {
+    name: Pages.name,
     path: "/gui",
-    element: BuildPage("Главная страница"),
+    element: Pages.MainPage,
+    loader: null,
+    allowedRoles: ["GuestRole"],
   },
   {
+    name: Pages.name,
     path: "/gui/auth/register",
-    element: BuildPage("Регистрация"),
+    element: Pages.RegisterPage,
+    loader: null,
+    allowedRoles: ["GuestRole"],
   },
   {
+    name: Pages.name,
     path: "/gui/auth/login",
-    element: BuildPage("Вход в систему"),
+    element: Pages.LoginPage,
+    loader: null,
+    allowedRoles: ["GuestRole"],
   },
   {
+    name: Pages.name,
     path: "/gui/hotels",
-    element: BuildPage("Все отели"),
+    element: Pages.HotelsPage,
+    loader: null,
+    allowedRoles: ["AdminRole", "UserRole", "ManagerRole"],
   },
   {
+    name: Pages.name,
     path: "/gui/rooms/search",
-    element: BuildPage("Поиск отеля"),
+    element: Pages.RoomsSearchPage,
+    loader: null,
+    allowedRoles: ["AdminRole", "UserRole", "ManagerRole"],
   },
   {
+    name: Pages.name,
     path: "/gui/rooms/search/results",
-    element: BuildPage("Результаты поиска"),
+    element: Pages.RoomsSearchResultsPage,
+    loader: null,
+    allowedRoles: ["AdminRole", "UserRole", "ManagerRole"],
   },
   {
+    name: Pages.name,
     path: "/gui/hotels/:id/edit",
-    element: BuildPage("Редактировать отель"),
+    element: Pages.EditHotelPage,
+    loader: null,
+    allowedRoles: ["AdminRole", "ManagerRole"],
   },
   {
-    path: "/gui/hotels/:id/edit",
-    element: BuildPage("Результаты поиска"),
+    name: Pages.name,
+    path: "/gui/hotels/search/results",
+    element: Pages.HotelsSearchResultsPage,
+    loader: null,
+    allowedRoles: ["AdminRole", "ManagerRole", "UserRole"],
   },
   {
+    name: Pages.name,
     path: "/gui/users/:id/edit",
-    element: BuildPage("Результаты поиска"),
+    element: Pages.EditUserPage,
+    loader: null,
+    allowedRoles: ["AdminRole"],
   },
-]);
+];
 
-export default AppBrowserRouter;
+const preparedRoutesArray = AppBrowserRoutesArray.map((object) => {
+  delete object.name;
+  delete object.allowedRoles;
+  return object;
+});
+
+export const AppBrowserRouter = createBrowserRouter(preparedRoutesArray);
+const RouterObject = { AppBrowserRouter, AppBrowserRoutesArray };
+
+export default RouterObject;

@@ -9,7 +9,7 @@ import {
 
 export const UnAuthorizedSection = () => {
   return (
-    <section className="container text-center1">
+    <section className="container ">
       <h1>Пыщь!..</h1>
       <p>
         К сожалению, незарегистрированным пользователям не разрешено

@@ -1,6 +1,6 @@
 import "./NavMenu.css";
 import { v4 as uuid } from "uuid";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useContext } from "react";
 import AppContext from "../../../contexts/AppContext";
 import AccessController from "../../../helpers/AccessController";
@@ -30,12 +30,12 @@ const NavMenu = (props) => {
     {
       text: "Войти",
       target: "/gui/auth/login",
-      allowedRoles: [undefined],
+      allowedRoles: ["GuestRole"],
     },
     {
       text: "Зарегистрироваться",
       target: "/gui/auth/register",
-      allowedRoles: [undefined],
+      allowedRoles: ["GuestRole"],
     },
   ];
 
@@ -52,7 +52,7 @@ const NavMenu = (props) => {
                 <AccessController
                   element={
                     <li className="NavMenu__item">
-                      <Link to={item.target}>{">" + item.text}</Link>
+                      <NavLink to={item.target}>{">" + item.text}</NavLink>
                     </li>
                   }
                   allowedRoles={item.allowedRoles}

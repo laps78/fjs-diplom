@@ -1,6 +1,6 @@
 const AccessController = (props) => {
   const { element, allowedRoles, user } = props;
-  console.log(element);
+  console.log(user.role);
   if (
     allowedRoles.findIndex((allowedRole) => allowedRole === user.role) !== -1
   ) {
