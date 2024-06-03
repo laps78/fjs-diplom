@@ -1,10 +1,20 @@
-const AccessController = (props) => {
-  const { element, allowedRoles, user } = props;
-  console.log(user.role);
+export const AccessController = ({ element, allowedRoles, userRole }) => {
+  //
+  console.log("AccessController userRole:", userRole);
+  console.log("AccessController element:", element);
+  console.log("AccessController allowedRolesFromProps:", allowedRoles);
+  console.log(
+    "check the if",
+    allowedRoles.findIndex((allowedRole) => allowedRole === userRole) !== -1
+  );
+  //
   if (
-    allowedRoles.findIndex((allowedRole) => allowedRole === user.role) !== -1
+    allowedRoles.findIndex((allowedRole) => allowedRole === userRole) !== -1
   ) {
-    return element;
+    //
+    console.log("show element: ", element);
+    //
+    return <>{element}</>;
   }
 };
 

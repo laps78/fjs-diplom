@@ -2,7 +2,7 @@ import "./NavMenu.css";
 import { v4 as uuid } from "uuid";
 import { NavLink } from "react-router-dom";
 import { useContext } from "react";
-import AppContext from "../../../contexts/AppContext";
+import UserContext from "../../../contexts/UserContext";
 import AccessController from "../../../helpers/AccessController";
 
 const NavMenu = (props) => {
@@ -38,29 +38,21 @@ const NavMenu = (props) => {
       allowedRoles: ["GuestRole"],
     },
   ];
-
-  const user = useContext(AppContext);
-
+  const user = useContext(UserContext);
+  //
+  console.log("NavMenu user: ", user);
+  //
   return (
     <ul className="NavMenu">
       {menuItems.map((item) => {
-        const key = uuid();
         return (
-          <AppContext.Consumer key={key}>
-            {(user) => {
-              return (
-                <AccessController
-                  element={
-                    <li className="NavMenu__item">
-                      <NavLink to={item.target}>{">" + item.text}</NavLink>
-                    </li>
-                  }
-                  allowedRoles={item.allowedRoles}
-                  user={user}
-                />
-              );
-            }}
-          </AppContext.Consumer>
+          <li className="NavMenu__item" key={uuid()}>
+            <AccessController
+              element={<NavLink to={item.target}>{">" + item.text}</NavLink>}
+              allowedRoles={item.allowedRoles}
+              userRole={user.role}
+            />
+          </li>
         );
       })}
     </ul>

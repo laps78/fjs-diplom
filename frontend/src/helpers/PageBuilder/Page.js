@@ -4,8 +4,7 @@ import Aside from "../../components/Aside/Aside";
 import Header from "../../components/Header/Header";
 import PropTypes from "prop-types";
 
-export const Page = (props) => {
-  const { pageName } = props;
+export const Page = ({ pageName }) => {
   return (
     <div className="App">
       <Header />
