@@ -33,7 +33,6 @@ const Main = (props) => {
         <AccessController
           element={
             <>
-              <h1>{pageName}</h1>
               {user ? <div>{authorizedContent}</div> : <UnAuthorizedSection />}
             </>
           }
