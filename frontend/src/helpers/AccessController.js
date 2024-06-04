@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 export const AccessController = ({ element, allowedRoles, userRole }) => {
   //
   console.log("AccessController userRole:", userRole);
@@ -16,6 +18,12 @@ export const AccessController = ({ element, allowedRoles, userRole }) => {
     //
     return <>{element}</>;
   }
+};
+
+AccessController.propTypes = {
+  element: PropTypes.element,
+  allowedRoles: PropTypes.array,
+  userRole: PropTypes.string,
 };
 
 export default AccessController;

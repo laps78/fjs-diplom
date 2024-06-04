@@ -8,13 +8,14 @@ import AccessController from "../../helpers/AccessController";
 
 import { Routes, Route } from "react-router-dom";
 import { AppBrowserRoutesArray } from "../../AppBrowserRouter";
+import MainRouter from "./content/MainRouter";
 
 const Main = ({ pageName }) => {
   const user = useContext(UserContext);
   //
   //console.log("Main User", user);
   //
-  const authorizedContent = "authorizedContent"; /*(
+  const authorizedContent = (
     <Routes>
       {AppBrowserRoutesArray.forEach((routerArrayItem) => {
         return (
@@ -26,7 +27,7 @@ const Main = ({ pageName }) => {
         );
       })}
     </Routes>
-  )*/
+  );
   return (
     <main className="shadowed_box Main col-6">
       <div className="main_content_wrapper text-center">
