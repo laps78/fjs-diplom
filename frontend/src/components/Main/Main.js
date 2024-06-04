@@ -8,7 +8,6 @@ import AccessController from "../../helpers/AccessController";
 
 import { Routes, Route } from "react-router-dom";
 import { AppBrowserRoutesArray } from "../../AppBrowserRouter";
-import MainRouter from "./content/MainRouter";
 
 const Main = ({ pageName }) => {
   const user = useContext(UserContext);
@@ -21,7 +20,7 @@ const Main = ({ pageName }) => {
         return (
           <Route
             path={routerArrayItem.path}
-            element={routerArrayItem.element}
+            element={routerArrayItem.MainContent}
             allowedRoles={routerArrayItem.allowedRoles}
           />
         );
