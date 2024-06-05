@@ -9,7 +9,7 @@ export const AppBrowserRoutesArray = [
     path: "/",
     element: Pages.MainPage,
     loader: null,
-    allowedRoles: ["GuestRole"],
+    allowedRoles: ["GuestRole", "AdminRole", "UserRole", "ManagerRole"], //TODO inspect roles
     MainContent: null,
   },
   {
@@ -17,7 +17,7 @@ export const AppBrowserRoutesArray = [
     path: "/gui",
     element: Pages.MainPage,
     loader: null,
-    allowedRoles: ["GuestRole"],
+    allowedRoles: ["GuestRole"], //TODO inspect roles
     MainContent: null,
   },
   {
