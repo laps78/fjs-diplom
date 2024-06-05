@@ -65,14 +65,14 @@ export const AppBrowserRoutesArray = [
     allowedRoles: ["AdminRole", "ManagerRole"],
   },
   {
-    name: Pages.name,
+    name: Pages.HotelsSearchResultsPage.props.pageName,
     path: "/gui/hotels/search/results",
     element: Pages.HotelsSearchResultsPage,
     loader: null,
     allowedRoles: ["AdminRole", "ManagerRole", "UserRole"],
   },
   {
-    name: Pages.name,
+    name: Pages.EditUserPage.props.pageName,
     path: "/gui/users/:id/edit",
     element: Pages.EditUserPage,
     loader: null,
