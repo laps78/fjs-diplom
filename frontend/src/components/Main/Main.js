@@ -17,11 +17,16 @@ const Main = ({ pageName }) => {
   const authorizedContent = (
     <Routes>
       {AppBrowserRoutesArray.forEach((routerArrayItem) => {
-        return (
-          <Route
+        const routeToControl = <Route
             path={routerArrayItem.path}
             element={routerArrayItem.MainContent}
             allowedRoles={routerArrayItem.allowedRoles}
+          />
+        return (
+          <AccessController
+            element={routeToControl}
+            allowedRoles={routerArrayItem.allowedRoles}
+            userRole={user.role}
           />
         );
       })}
@@ -30,24 +35,13 @@ const Main = ({ pageName }) => {
   return (
     <main className="shadowed_box Main col-6">
       <div className="main_content_wrapper text-center">
-        <AccessController
-          element={
-            user.role !== "GuestRole" ? (
-              <>{authorizedContent}</>
-            ) : (
-              <UnAuthorizedSection />
-            )
+        {() => {
+          if(user.role === "GuestRole") {
+            return <UnAuthorizedSection />
+          } else { 
+            return <>{authorizedContent}</>
           }
-          /**
-           * TODO:
-           * Необходимо переписать компонент Main:
-           * Гипотеза закл. в том, что в AccessController
-           * стоит передавать непосредственно сам роут,
-           * а в текущей реализации проверки избыточны.
-           */
-          allowedRoles={["UserRole"]}//TODO проверить: возможно ли прочитать пропсы передаваемого элемента
-          userRole={user.role}
-        />
+        }}
       </div>
     </main>
   );
