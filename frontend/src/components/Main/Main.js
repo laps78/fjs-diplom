@@ -11,17 +11,16 @@ import { AppBrowserRoutesArray } from "../../AppBrowserRouter";
 
 const Main = ({ pageName }) => {
   const user = useContext(UserContext);
-  //
-  //console.log("Main User", user);
-  //
   const authorizedContent = (
     <Routes>
       {AppBrowserRoutesArray.forEach((routerArrayItem) => {
-        const routeToControl = <Route
+        const routeToControl = (
+          <Route
             path={routerArrayItem.path}
             element={routerArrayItem.MainContent}
             allowedRoles={routerArrayItem.allowedRoles}
           />
+        );
         return (
           <AccessController
             element={routeToControl}
@@ -32,19 +31,20 @@ const Main = ({ pageName }) => {
       })}
     </Routes>
   );
-  return (
-    <main className="shadowed_box Main col-6">
-      <div className="main_content_wrapper text-center">
-        {() => {
-          if(user.role === "GuestRole") {
-            return <UnAuthorizedSection />
-          } else { 
-            return <>{authorizedContent}</>
-          }
-        }}
-      </div>
-    </main>
-  );
+
+  const TMPMainValidator = ({ component }) => {
+    return (
+      <main className="shadowed_box Main col-6">
+        <div className="main_content_wrapper text-center">{component}</div>
+      </main>
+    );
+  };
+
+  //TODO переписать убогий гвонокод комнпонента. Что еще за TMPValidator???
+  if (user.role === "GuestRole") {
+    return <TMPMainValidator component={authorizedContent} />;
+  }
+  return <TMPMainValidator component={<UnAuthorizedSection />} />;
 };
 
 export default Main;

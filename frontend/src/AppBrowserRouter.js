@@ -22,7 +22,7 @@ export const AppBrowserRoutesArray = [
   },
   {
     name: Pages.RegisterPage.props.pageName,
-    path: "/gui/auth/register",
+    path: "/gui/auth/register/",
     element: Pages.RegisterPage,
     loader: null,
     allowedRoles: ["GuestRole"],
@@ -30,7 +30,7 @@ export const AppBrowserRoutesArray = [
   },
   {
     name: Pages.LoginPage.props.pageName,
-    path: "/gui/auth/login",
+    path: "/gui/auth/login/",
     element: Pages.LoginPage,
     loader: null,
     allowedRoles: ["GuestRole"],
