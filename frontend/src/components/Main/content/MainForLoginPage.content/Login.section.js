@@ -1,9 +1,11 @@
 import { LoginForm } from "../../../atoms/forms/LoginForm/LoginForm";
-
+import AccessController from "../../../../helpers/AccessController";
 const LoginSection = () => {
   return (
     <section className="MainSection" name="Login">
-      <LoginForm />
+      <AccessController>
+        <LoginForm />
+      </AccessController>
     </section>
   );
 };
