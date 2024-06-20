@@ -50,7 +50,6 @@ const NavMenu = (props) => {
             <AccessController
               element={<NavLink to={item.target}>{">" + item.text}</NavLink>}
               allowedRoles={item.allowedRoles}
-              userRole={user.role}
             />
           </li>
         );
