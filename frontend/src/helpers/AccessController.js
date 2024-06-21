@@ -11,9 +11,9 @@ export const AccessController = ({ element, allowedRoles }) => {
     console.log("show element: ", element);
     //
     return <>{element}</>;
-  } else {
-    return <>forbidden</>;
-  }
+  } // else {
+  //   return <>forbidden</>;
+  // }
 };
 
 AccessController.propTypes = {
