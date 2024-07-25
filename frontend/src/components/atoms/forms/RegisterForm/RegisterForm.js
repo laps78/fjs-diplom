@@ -1,5 +1,6 @@
 import "./RegisterForm.css";
 import { useRef } from "react";
+import BackendRequestHandler from "../../../../helpers/BakcendRequestHandler";
 
 export const linkToDropdownRegisterForm = (
   <button
@@ -14,12 +15,24 @@ export const linkToDropdownRegisterForm = (
 );
 
 export const RegisterForm = () => {
+  const defaultData = {
+    email: "test@site.ru",
+    password: "123456",
+    name: "test",
+    contactPhone: "89123456789",
+    role: "client",
+  };
+  const handleSubmit = (data) => {
+    console.log("reegister form submitted!");
+    const registerUrl = "/api/admin/users";
+    BackendRequestHandler(registerUrl, "POST", defaultData);
+  };
   return (
     <div className="dropdown">
-      <form className="dropdown-menu p-4">
+      <form className="dropdown-menu p-4" onSubmit={handleSubmit}>
         <div className="mb-3">
           <label htmlFor="exampleDropdownFormEmail2" className="form-label">
-            Email address
+            Адрес электрронной почты
           </label>
           <input
             type="email"
@@ -30,7 +43,7 @@ export const RegisterForm = () => {
         </div>
         <div className="mb-3">
           <label htmlFor="exampleDropdownFormPassword2" className="form-label">
-            Password
+            Придумайте надежный пароль
           </label>
           <input
             type="password"
@@ -47,12 +60,12 @@ export const RegisterForm = () => {
               id="dropdownCheck2"
             />
             <label htmlFor="dropdownCheck2" className="form-check-label">
-              Remember me
+              Запомнить меня
             </label>
           </div>
         </div>
         <button type="submit" className="btn btn-primary">
-          Sign in
+          Регистрация
         </button>
       </form>
     </div>
