@@ -29,12 +29,12 @@ const NavMenu = (props) => {
     },
     {
       text: "Войти",
-      target: "/gui/auth/login",
+      target: "/gui/auth/login/",
       allowedRoles: ["GuestRole"],
     },
     {
       text: "Зарегистрироваться",
-      target: "/gui/auth/register",
+      target: "/gui/auth/register/",
       allowedRoles: ["GuestRole"],
     },
   ];

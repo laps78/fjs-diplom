@@ -9,23 +9,19 @@ import RegisterSection from "./content/MainForRegisterPage.content/Register.sect
 const Main = ({ pageName }) => {
   const routes = useRoutes([
     {
-      path:  '/',
-      element: <UnAuthorizedSection />
+      path: "/",
+      element: <UnAuthorizedSection />,
     },
     {
-      path: "gui/login",
-      element: <LoginSection />
+      path: "gui/login/",
+      element: <LoginSection />,
     },
     {
-      path: "gui/register",
-      element: <RegisterSection />
-    }
-  ])
-  return (
-    <main className="shadowed_box Main col-7">
-      {routes}
-    </main>
-  );
+      path: "gui/register/",
+      element: <RegisterSection />,
+    },
+  ]);
+  return <main className="shadowed_box Main col-7">{routes}</main>;
 };
 
 export default Main;
